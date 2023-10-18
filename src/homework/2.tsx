@@ -12,6 +12,12 @@ const initialState: State = {
   requestStep: 'idle',
 };
 
+type Action =
+  | { type: "START_REQUEST" }
+  | { type: "PENDING_REQUEST" }
+  | { type: "FINISH_REQUEST" }
+  | { type: "RESET_REQUEST" };
+
 function requestReducer(state: State, action: Action): State {
   switch (action.type) {
     case 'START_REQUEST':
